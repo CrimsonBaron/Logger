@@ -8,11 +8,8 @@ public class ConsoleLogger implements Logger {
     Level level;
     Format format = new Format();
 
-    ///debug-----------------------------------
-    String time = "9:27";
-
-    //
-
+    public ConsoleLogger() {
+    }
 
     @Override
     public void setLevel(Level level) {
@@ -20,42 +17,49 @@ public class ConsoleLogger implements Logger {
     }
 
     @Override
+    public com.logger.logger.interfaces.Format getFormat() {
+        return format;
+    }
+
+    @Override
     public void debug(String msg) {
-        if (level == Level.ALL || level == Level.DEBUG){
+        if (level == Level.ALL || level == Level.DEBUG) {
             format.setMsg(msg);
-            System.out.println(format.getFormat());
+            format.setFormat(format.getFormat());
+            System.out.println(format.getFormat()+"\n");
         }
     }
 
     @Override
     public void error(String msg) {
-        if (level == Level.ALL || level == Level.ERROR){
+        if (level == Level.ALL || level == Level.ERROR) {
             format.setMsg(msg);
-            System.out.println(format.getFormat());
+            System.out.println(format.getFormat()+"\n");
         }
     }
 
     @Override
     public void warn(String msg) {
-        if (level == Level.ALL || level == Level.WARN){
+        if (level == Level.ALL || level == Level.WARN) {
             format.setMsg(msg);
-            System.out.println(format.getFormat());
+            System.out.println(format.getFormat()+"\n");
         }
     }
 
     @Override
     public void fatal(String msg) {
-        if (level == Level.ALL || level == Level.FATAL){
+        if (level == Level.ALL || level == Level.FATAL) {
             format.setMsg(msg);
-            System.out.println(format.getFormat());
+             System.out.println(format.getFormat()+"\n");
         }
     }
 
     @Override
     public void info(String msg) {
-        if (level == Level.ALL || level == Level.INFO){
+        if (level == Level.ALL || level == Level.INFO) {
             format.setMsg(msg);
-            System.out.println(format.getFormat());
+             System.out.println(format.getFormat()+"\n");
         }
     }
+
 }
