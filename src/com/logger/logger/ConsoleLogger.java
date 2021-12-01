@@ -62,4 +62,10 @@ public class ConsoleLogger implements Logger {
         }
     }
 
+    @Override
+    public void setFormat(com.logger.logger.interfaces.Format format) {
+        this.format = (Format) format;
+    }
+
+
 }

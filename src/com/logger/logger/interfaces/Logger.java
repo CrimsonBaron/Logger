@@ -11,5 +11,6 @@ public interface Logger {
     void warn(String msg);
     void fatal(String msg);
     void info(String msg);
+    void setFormat(com.logger.logger.Format format);
 
 }
